@@ -123,11 +123,12 @@ var joy1Direzione = document.getElementById("joy1Direzione");
 var joy1X = document.getElementById("joy1X");
 var joy1Y = document.getElementById("joy1Y");
 
-setInterval(function(){ console.log(Joy1.GetPosX());
-	console.log(Joy1.GetPosY());
-	console.log(Joy1.GetDir());
-	console.log(Joy1.GetX());
-	console.log(Joy1.GetY()); }, 50);
+setInterval(function(){ 
+	var X = Joy1.GetPosX();
+	var Y = Joy1.GetPosY();
+	console.log(X);
+	console.log(Y); 
+}, 50);
 // setInterval(function(){  }, 50);
 // setInterval(function(){  }, 50);
 // setInterval(function(){  }, 50);
