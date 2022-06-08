@@ -338,10 +338,10 @@ const getInput = function() {
   btn_full_screen.addEventListener('click', function() {
     if(document.fullscreenElement == null){
       CallbackOpenFullscreen();
-      btn_full_screen.value = "Close Fullscreen";
+      btn_full_screen.innerHTML = "Close Fullscreen";
     }else{
       CallbackCloseFullscreen();
-      btn_full_screen.value = "Fullscreen";
+      btn_full_screen.innerHTML = "Fullscreen";
     }
   });
 
