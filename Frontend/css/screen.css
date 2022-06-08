@@ -1,0 +1,1197 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+    /* typography */
+    
+
+    /* colors */
+    --global-color-alpha-light: #CC2E29;
+    --global-color-alpha: #B20600;
+    --global-color-alpha-dark: #990500;
+    --global-color-beta: #8A9399;
+    --global-text-color: #000;
+
+    --global-background-color: #fff;
+
+    --button-backgroundColor: #fff;
+    --button-text-color: #000;
+    --text-color-beta: #000;
+
+    --header-background-color: var(--global-color-alpha);
+    --header-text-color: #fff;
+
+    /* --global-color-neutral-xxxx-light: #F5F6FA;
+    --global-color-neutral-xxx-light: #E2E3E7; */
+    --global-color-neutral-xx-light: #E6E3E3;
+    --global-color-neutral-x-light: #D9D5D5;
+    --global-color-neutral-light: #CCC8C8;
+    --global-color-neutral: #B2ABAB;
+    --global-color-neutral-dark: #999090;
+    --global-color-neutral-x-dark: #666060;
+    --global-color-neutral-xx-dark: #4D4746;
+    /* --global-color-neutral-xxx-dark: #35374d;
+    --global-color-neutral-xxxx-dark: #20223a; */
+
+    /* fonts */
+    /* --global-fontSize-md:24px; */
+    --global-fontSize-md:1rem;
+
+    /* Shadows */
+    /* --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent); */
+
+
+    --global-input-focus-borderColor: var(--global-color-neutral-dark);
+    --global-input-borderColor: var(--global-color-neutral-dark);
+    --global-input-focus-boxShadowColor: var(--global-color-alpha-light);
+    --global-input-focus-boxShadow: 0 0 0 3px var(--global-input-focus-boxShadowColor);
+
+    /* radius */
+    
+
+    /* borders */
+    --global-borderRadius: 5px;
+    --global-borderRadius--orientation: 10px;
+    --global-borderWidth: 2px;
+    --global-borderColor: var(--global-color-alpha);
+
+    --button-borderWidth:3px;
+    
+    --global-orientation-boxShadowSpread: 0px 0px 8px;
+
+    
+    /* transitions */
+    --global-transitionEasing-out: ease-out;
+    --global-transitionDuration-alpha: .1s;
+    --global-transitionDuration-beta: .2s;
+    --global-transitionDuration-gamma: .3s;
+
+    /* baseline */
+
+    --global-baseline: calc(1rem / 2);
+
+    --global-whitespace-sm: var(--global-baseline);
+    --global-whitespace-sm: calc(var(--global-baseline)*1.5);
+    --global-whitespace-md: calc(var(--global-baseline) * 2);
+    --global-whitespace-base: calc(var(--global-baseline) * 3);
+    --global-whitespace-lg: calc(var(--global-baseline) * 4);
+    
+    
+    /* transitions */
+    --global-transitionTiming-alpha:0.3s;
+    /* button */
+    --button-hover-backgroundColor:var(--global-color-beta);
+    --button-hover-borderColor:var(--button-text-color);
+    --button-hover-textColor:var(--text-color-beta);
+    --button-focus-bordercollor:var(--global-color-beta);
+    --global-button-focus-boxShadowSpread: 0px 0px 6px;
+    --global-button-focus-boxShadowColor: var(--global-color-alpha);
+    
+    
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    /* font-size: 15px; */
+    font-size: 100%; /* = 15px in case of 16px default font-size */
+    line-height: 1.6666667em; /* = 25px */
+    font-family: "Source Sans Pro", Helvetica, arial, sans-serif;
+    color: var(--global-color-neutral-dark);
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--global-background-color);
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    /* place-items: center; */
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+    background: var(--global-color-alpha);
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: var(--global-color-alpha);
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+h1 {
+    /* font-size: 36px; */
+    font-size: 50px;
+    line-height: 60px;
+    font-family: wreath, serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h2 {
+    /* font-size: 28px; */
+    /* font-size: 1.8666666667rem; */
+    font-size: calc(28rem / var(--global-root-font-size));
+    font-weight: normal;
+    line-height: calc(var(--global-baseline) * 8);
+    margin: 0 0 var(--global-whitespace-lg);
+}
+
+h3 {
+    /* font-size: 18px; */
+    font-size: 1.2rem;
+    line-height: calc(var(--global-baseline) * 6);
+    margin: 0 0 var(--global-whitespace-md);
+}
+
+h4,
+h5,
+h6 {
+    /* font-size: 15px; */
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: calc(var(--global-baseline) * 5);
+    margin: 0 0 var(--global-whitespace-md);
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 var(--global-whitespace-md);
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: calc(var(--global-baseline) * 5);
+    margin: 0 0 var(--global-whitespace-md);
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 var(--global-whitespace-md);
+}
+
+a {
+    transition: all var(--global-transition-alpha);
+    color: var(--global-color-beta);
+    outline-color: var(--global-color-beta);
+    outline-width: medium;
+    outline-offset: 2px;
+}
+
+a:visited,
+a:active {
+    color: var(--global-color-beta);
+}
+
+a:hover,
+a:focus {
+    color: var(--global-color-alpha);
+}
+
+label,
+input {
+    display: block;
+}
+
+select {
+    width: 100%;
+}
+
+input::placeholder {
+    color: var(--global-color-neutral-light);
+}
+
+input[type=range] {
+    height: 32px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 2px 2px 1px #000000;
+    background: #B20600;
+    border-radius: 20px;
+    border: 0px solid #010101;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000031;
+    border: 1px solid #00001E;
+    height: 24px;
+    width: 24px;
+    border-radius: 50px;
+    background: #FFFFFF;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -6.5px;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #B20600;
+  }
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 2px 2px 1px #000000;
+    background: #B20600;
+    border-radius: 20px;
+    border: 0px solid #010101;
+  }
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000031;
+    border: 1px solid #00001E;
+    height: 24px;
+    width: 24px;
+    border-radius: 50px;
+    background: #FFFFFF;
+    cursor: pointer;
+  }
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #B20600;
+    border: 0px solid #010101;
+    border-radius: 40px;
+    box-shadow: 2px 2px 1px #000000;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: #B20600;
+    border: 0px solid #010101;
+    border-radius: 40px;
+    box-shadow: 2px 2px 1px #000000;
+  }
+  input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 1px 1px 1px #000031;
+    border: 1px solid #00001E;
+    height: 24px;
+    width: 24px;
+    border-radius: 50px;
+    background: #FFFFFF;
+    cursor: pointer;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: #B20600;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: #B20600;
+  }
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    position: relative;
+    padding: var(--global-whitespace-lg) var(--global-whitespace-lg) var(--global-baseline);
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    /* max-width: 78em;*/
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: calc(100vh/6) calc(100vh/6 *5) ;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: header
+    ---
+    Website header
+*/
+
+.c-header {
+    /* min-width: 100vw; */
+    /* min-height: 15vh; */
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: var(--header-background-color);
+    color: var(--header-text-color);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.c-header--tekst{
+    align-self: center;
+    justify-self: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+    Component: instellingen
+    ---
+    Class to stile & position the contorls part of the wesite
+*/
+/* .c-instellingen{
+    display: none;
+} */
+
+/*
+    Component: controls
+    ---
+    Class to stile & position the contorls part of the wesite
+*/
+
+.c-controls {
+    /* height: 100%; */
+    padding: var(--global-whitespace-md);
+    display: grid;
+    /* justify-content: center; */
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 3fr repeat(3 ,1fr) 3fr;
+    grid-template-rows: 0.5fr 3fr 0.5fr 1fr;
+    grid-gap: var(--global-whitespace-sm);
+}
+
+.c-controls--wink{
+    grid-row: 3;
+    grid-column: 2 / span 3;
+    color: var(--global-text-color);
+    margin: 0;
+}
+
+/* .c-controls--position{
+    grid-row: 2;
+    grid-column: 1;
+    color: var(--global-text-color);
+    margin: 0;
+} */
+
+.c-controls--button_wink_left{
+    grid-row: 4;
+    grid-column: 2;
+}
+
+.c-controls--button_wink_both{
+    grid-row: 4;
+    grid-column: 3;
+}
+
+.c-controls--button_wink_right{
+    grid-row: 4;
+    grid-column: 4;
+}
+
+
+.c-joystick {
+    width:200px;
+    height:200px;
+    grid-row:2 / span 3;
+    grid-column: span 1;
+}
+
+.c-joystick--ogen{
+    width:200px;
+    height:200px;
+    grid-row:2 / span 3;
+    grid-column: 5;
+}
+
+.c-joystick--type--hoofd{
+    color: var(--global-text-color);
+    grid-row: 1;
+    grid-column:1;
+    padding: 0;
+    margin: 0;
+}
+
+.c-joystick--type--ogen{
+    color: var(--global-text-color);
+    grid-row: 1;
+    grid-column:5;
+    padding: 0;
+    margin: 0;
+}
+
+.c-joystick--visualization{
+    padding: var(--global-whitespace-sm);
+    height: 100%;
+    width: 100%;
+    grid-row: 1 / span 2;
+    grid-column: span 3;
+    border: 4px solid var(--global-color-alpha);
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.c-joystick--visualization__rechts{
+    border-radius: 50%;
+    position: relative;
+    width: 80%;
+    height: 0;
+    padding-bottom: 80%;
+    justify-self: center;
+    background-color: var(--global-color-alpha);
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.c-joystick--visualization__links{
+    border-radius: 50%;
+    position: relative;
+    width: 80%;
+    height: 0;
+    padding-bottom: 80%;
+    justify-self: center;
+    background-color: var(--global-color-alpha);
+    grid-column: 3 / span 2;
+    grid-row: 2 / span 2;
+}
+
+
+/*
+    Component: button
+    ---
+    Class to stile buttons
+*/
+
+.c-head{
+    grid-row: 1 / span 2;
+    grid-column: 2 / span 3;
+    width: 100%;
+    height: 100%;
+}
+
+/*
+    Component: button
+    ---
+    Class to stile buttons
+*/
+
+.c-button {
+    font-weight: 500;
+    border-radius: var(--button-borderRadius, var(--global-borderRadius));
+    border: var(--button-borderWidth, var(--global-borderWidth)) solid var(--global-color-alpha);
+    background-color: var(--button-backgroundColor);
+    color: var(--button-text-color);
+    padding: calc(var(--global-baseline) * 1.5 - var(--button-borderWidth, var(--global-borderWidth))) var(--global-whitespace-md);
+    line-height: calc(var(--global-baseline) * 3);
+    width: 100%;
+    outline: none;
+    /* box-shadow: var(--button-boxShadow, 0); */
+    /* transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out); */
+}
+
+.c-button:hover {
+    /* border-color: var(--button-hover-borderColor); */
+    /* background-color: var(--button-hover-backgroundColor); */
+    /* color: var(--button-hover-textColor); */
+    box-shadow: var(--global-button-focus-boxShadowSpread) var(--global-button-focus-boxShadowColor);
+}
+
+.c-button:focus {
+    /* border-color: var(--button-focus-bordercollor); */
+    box-shadow: var(--global-button-focus-boxShadowSpread) var(--global-button-focus-boxShadowColor);
+}
+
+.c-button:active {
+    border-color: var(--button-hover-backgroundColor);
+    background-color: var(--button-text-color);
+    color: var(--button-hover-textColor);
+    box-shadow: var(--button-active-boxShadow, 0);
+}
+
+.active {
+    background-color: var(--global-color-neutral-x-dark);
+    color: white;
+}
+
+/*
+    Component: settings 
+    ---
+    Class to stile settings
+*/
+.c-settings {
+    margin-top: calc(100vh/6);
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    position: fixed;
+    overflow-y:scroll;
+    top: 0;
+    left: 0;
+    height: calc(((100vh/6) * 5));
+    background: #fff;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    transform: translateX(-100%);
+    transition: transform .3s;
+    will-change: transform;
+    contain: paint;
+}
+
+.settings-active .c-settings {
+    transform: none;
+}
+
+.c-settings--text{
+    font-size: var(--global-fontSize-md);
+    color: var(--global-text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.c-settings--background{
+    margin-top: calc(100vh/6);
+    margin-left: 300px;
+    height: calc(((100vh/6) * 5));
+    position: absolute;
+    width: calc(100% - 300px) ;
+    background-color: #000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s;
+}
+
+.settings-active .c-settings--background {
+    opacity: 0.5;
+    pointer-events: auto;
+}
+
+.c-settings--knipogen{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-settings--knipogen--label{
+    display: block;
+}
+
+.c-settings--knipogen--end{
+    display: flex;
+}
+
+.c-settings--knipogen--input{
+    display: block;
+    width: 48px;
+    margin-right: var(--global-whitespace-sm);
+}
+
+/*
+    Component: settings symbol
+    ---
+    Class to stile settings symbol
+*/
+
+.c-option {
+    margin-right: var(--global-whitespace-sm);
+}
+
+
+.c-settings__symbol_fake_input {
+    padding-left: 24px;
+}
+
+
+.c-settings__symbol{
+    transition: transform .5s;
+}
+
+
+.c-settings__symbol_fake_input{
+    align-items: center;
+    justify-content: center;
+    width: var(--global-whitespace-md);
+    height: var(--global-whitespace-md);
+    margin-right: var(--global-whitespace-sm);
+    background: var(--global-input-backgroundColor);
+    /* border: var(--global-borderWidth) solid var(--custom-option-borderColor, var(--global-input-borderColor)); */
+    /* box-shadow: var(--custom-option-boxShadow, 0); */
+    transition: border var(--global-transitionTiming-alpha), box-shadow var(--global-transitionTiming-alpha);
+    fill:var(--global-color-neutral-x-light);
+}
+
+.c-option--hidden:checked+.c-custom-option .c-settings__symbol{
+    transform: rotate(-110deg);
+    /* transition: transform 2s; */
+}
+
+.c-settings--orientation{
+    width: 250px;
+    height: 48px;
+    margin-bottom: 24px;
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* gap: 12px; */
+    /* align-items: center; */
+    /* justify-items: center; */
+}
+
+.c-settings--orientation--right{
+    color: var(--button-text-color);
+    border: var(--global-borderWidth) solid var(--global-borderColor);
+    border-radius: var(--global-borderRadius--orientation) 0 0 var(--global-borderRadius--orientation);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.c-settings--orientation--left{
+    color: var(--button-text-color);
+    border: var(--global-borderWidth) solid var(--global-borderColor);
+    border-radius: 0 var(--global-borderRadius--orientation) var(--global-borderRadius--orientation) 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="radio"]:checked + .c-settings--orientation--left{
+    box-shadow: var(--global-orientation-boxShadowSpread) var(--global-button-focus-boxShadowColor);
+}
+
+input[type="radio"]:checked + .c-settings--orientation--right{
+    box-shadow: var(--global-orientation-boxShadowSpread) var(--global-button-focus-boxShadowColor);
+}
+
+/* .c-settings--slider{
+    width: 100%;
+} */
+
+/*
+    Component: Label
+    ---
+    Class to put on all form labels
+*/
+
+.c-label {
+    --label-color: var(--global-text-color);
+    margin-bottom: 0;
+    padding-bottom: var(--global-whitespace-sm);
+    font-size: var(--global-fontSize-md);
+    line-height: 32px;
+    color: var(--label-color);
+}
+
+.c-label--option {
+    padding-bottom: 0;
+}
+
+/*
+    Component: Custom Toggle
+    ---
+    Visually change a checkbox into a toggle
+*/
+
+.c-custom-toggle-list {
+    --toggle-list-borderColor: var(--global-color-neutral-xxx-light);
+    margin-bottom: var(--global-whitespace-md);
+}
+
+.c-custom-toggle-list__item {
+    margin-bottom: calc(var(--global-whitespace-md) / 2);
+}
+
+.c-custom-toggle {
+    --toggle-backgroundColor: var(--global-color-neutral-xx-light);
+    --toggle-checked-borderColor: var(--global-color-alpha-dark);
+    --toggle-checked-backgroundColor: var(--global-color-alpha);
+    --toggle-focus-boxShadow: var(--global-input-focus-boxShadow);
+    --toggle__switch-backgroundColor: White;
+    --toggle__switch-checked-backgroundColor: White;
+    --toggle__switch-transition: all var(--global-transitionTiming-alpha);
+    display: flex;
+    align-items: center;
+}
+
+.c-custom-toggle--inverted {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.c-custom-toggle__fake-input {
+    display: block;
+    height: 24px;
+    width: 48px;
+    margin-right: var(--global-whitespace-md);
+    background-color: var(--toggle-backgroundColor);
+    border-radius: 32px;
+    border: var(--global-borderWidth) solid var(--global-input-borderColor);
+    transition: all var(--global-transitionTiming-alpha);
+    box-shadow: var(--toggle-boxShadow, 0);
+}
+
+.c-custom-toggle--inverted .c-custom-toggle__fake-input {
+    margin-right: 0;
+}
+
+.c-custom-toggle__fake-input::after {
+    position: relative;
+    display: block;
+    content: '';
+    height: 22px;
+    width: 22px;
+    border-radius: 22px;
+    transform: translateY(-1px);
+    box-shadow: 0 1px 3px 1px rgba(0,0,0,.2);
+    background-color: var(--toggle__switch-backgroundColor);
+    transition: var(--toggle__switch-transition);
+}
+
+/* focused and active state */
+
+.c-option--hidden:focus-visible + .c-custom-toggle {
+    --toggle-borderColor: var(--global-input-focus-borderColor);
+    --toggle-boxShadow: var(--toggle-focus-boxShadow);
+    /* transform: translateY(-4px); */
+}
+
+/* checked state */
+
+.c-option--hidden:checked + .c-custom-toggle {
+    --toggle-backgroundColor: var(--toggle-checked-backgroundColor);
+    --toggle-borderColor: var(--toggle-checked-borderColor);
+    --toggle__switch-backgroundColor: var(--toggle__switch-checked-backgroundColor);    
+    /* transform: translateY(-2px); */
+}
+
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
+    transform: translate(23px,-1px);
+}
+
+/* special active state */
+
+.c-custom-toggle:active .c-custom-toggle__fake-input::after {
+    width: 28px;
+}
+
+.c-option--hidden:checked + .c-custom-toggle:active .c-custom-toggle__fake-input::after {
+    margin-left: -6px;
+}
+
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+
+
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
+}
+
+.u-mb-clear {
+    margin-bottom: 0 !important;
+}
+
+.u-mb-xxs {
+    margin-bottom: var(--global-whitespace-xxs) !important;
+}
+
+.u-mb-xs {
+    margin-bottom: var(--global-whitespace-xs) !important;
+}
+
+.u-mb-sm {
+    margin-bottom: var(--global-whitespace-sm) !important;
+}
+
+.u-mb-md {
+    margin-bottom: var(--global-whitespace-md) !important;
+}
+
+.u-mb-lg {
+    margin-bottom: var(--global-whitespace-lg) !important;
+}
+
+/* .u-mb-xl {
+    margin-bottom: var(--global-whitespace-xl) !important;
+} */
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+    max-width: 27em !important;
+}
+
+.u-max-width-sm {
+    max-width: 39em !important;
+}
+
+.u-max-width-md {
+    max-width: 50em !important;
+}
+
+.u-max-width-lg {
+    max-width: 63.5em !important;
+}
+
+.u-max-width-none {
+    max-width: none !important;
+}
+
+
+/*
+    Utilities: align
+    ---
+    Utility classes align text or components
+*/
+
+.u-align-text-center {
+    text-align: center;
+}
+
+.u-align-center {
+    margin: 0 auto;
+}
+
+/*
+    Utilities: text
+    Utility classes to create smaller or bigger test
+*/
+
+.u-text-xs {
+    font-size: calc(11rem / var(--global-root-font-size));
+}
+
+.u-text-sm {
+    font-size: calc(13rem / var(--global-root-font-size));
+    line-height: calc(var(--global-baseline) * 4);
+}
+
+/*
+    Utilities: span
+    Utility classes to span grid items across the x and y axis
+*/
+
+/* x: horizontal */
+
+@media (min-width: 62em) {
+
+    .u-x-span-3-bp3 {
+        grid-column: span 3;
+    }
+
+    .u-x-span-4-bp3 {
+        grid-column: span 4;
+    }
+
+    .u-x-span-6-bp3 {
+        grid-column: span 6;
+    }
+
+    .u-x-span-8-bp3 {
+        grid-column: span 8;
+    }
+
+    .u-x-span-9-bp3 {
+        grid-column: span 9;
+    }
+
+}
+
+/* y: vertical */
+
+@media (min-width: 62em) {
+
+    .u-y-span-2-bp3 {
+        grid-row: span 2;
+    }
+
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 62em and up)
+@media (min-width: 62em) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

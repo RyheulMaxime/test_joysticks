@@ -62,7 +62,7 @@
          internalFillColor = (typeof parameters.internalFillColor === "undefined" ? "#B20600" : parameters.internalFillColor),
          internalLineWidth = (typeof parameters.internalLineWidth === "undefined" ? 2 : parameters.internalLineWidth),
          internalStrokeColor = (typeof parameters.internalStrokeColor === "undefined" ? "#B20600" : parameters.internalStrokeColor),
-         externalLineWidth = (typeof parameters.externalLineWidth === "undefined" ? 2 : parameters.externalLineWidth),
+         externalLineWidth = (typeof parameters.externalLineWidth === "undefined" ? 4 : parameters.externalLineWidth),
          externalStrokeColor = (typeof parameters.externalStrokeColor ===  "undefined" ? "#B20600" : parameters.externalStrokeColor),
          autoReturnToCenter = (typeof parameters.autoReturnToCenter === "undefined" ? true : parameters.autoReturnToCenter);
      
@@ -81,7 +81,11 @@
      var circumference = 2 * Math.PI;
      var internalRadius = (canvas.width-((canvas.width/2)+10))/2;
      var maxMoveStick = internalRadius + 5;
-     var externalRadius = internalRadius + 30;
+     if(width < 250){
+        var externalRadius = internalRadius + 30;
+     }else{
+        var externalRadius = internalRadius + 50;
+     }
      var centerX = canvas.width / 2;
      var centerY = canvas.height / 2;
      var directionHorizontalLimitPos = canvas.width / 10;
