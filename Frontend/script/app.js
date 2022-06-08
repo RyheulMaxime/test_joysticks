@@ -80,12 +80,30 @@ var speed_wink = 800; // time wink in ms
 //#endregion
 
 //#region ***  Callback-Visualisation - show___         ***********
+function CallbackOpenFullscreen() {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+    document.documentElement.msRequestFullscreen();
+  }
+}
+
+/* Close fullscreen */
+function CallbackCloseFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
+}
+
 //#endregion
 
 //#region ***  Callback-No Visualisation - callback___  ***********
-// function callbackSleep(ms) {
-//   return new Promise(resolve => setTimeout(resolve, ms));
-// }
 
 async function wink(button){ //must be async func
   console.log("wink: " + button)
@@ -315,6 +333,18 @@ const getInput = function() {
       redraw();
     }
   });
+
+  var btn_full_screen = document.querySelector(".js-fullscreen")
+  btn_full_screen.addEventListener('click', function() {
+    if(document.fullscreenElement == null){
+      CallbackOpenFullscreen();
+      btn_full_screen.value = "Close Fullscreen";
+    }else{
+      CallbackCloseFullscreen();
+      btn_full_screen.value = "Fullscreen";
+    }
+  });
+
 }
 
 //#endregion
@@ -334,8 +364,10 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM content loaded');
     init();
 
+    var btn_full_screen = document.querySelector(".js-fullscreen")
     if (window.matchMedia('(display-mode: standalone)').matches) {
-      console.log('display-mode is standalone');
+      // console.log('display-mode is standalone');
+      btn_full_screen.style.display = "none";
     }
 
     if ('serviceWorker' in navigator) {
@@ -347,6 +379,6 @@ document.addEventListener('DOMContentLoaded', function() {
           // registration failed :(
           console.log('ServiceWorker registration failed: ', err);
         });
-    }
+    };
 
 })
