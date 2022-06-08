@@ -339,6 +339,7 @@ const getInput = function() {
     if(document.fullscreenElement == null){
       CallbackOpenFullscreen();
       btn_full_screen.innerText = "Close Fullscreen";
+      screen.lockOrientation('landscape');
     }else{
       CallbackCloseFullscreen();
       btn_full_screen.innerText = "Fullscreen";
