@@ -338,10 +338,10 @@ const getInput = function() {
   btn_full_screen.addEventListener('click', function() {
     if(document.fullscreenElement == null){
       CallbackOpenFullscreen();
-      btn_full_screen.innerHTML = "Close Fullscreen";
+      btn_full_screen.innerText = "Close Fullscreen";
     }else{
       CallbackCloseFullscreen();
-      btn_full_screen.innerHTML = "Fullscreen";
+      btn_full_screen.innerText = "Fullscreen";
     }
   });
 
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var btn_full_screen = document.querySelector(".js-fullscreen")
     if (window.matchMedia('(display-mode: standalone)').matches) {
-      // console.log('display-mode is standalone');
+      console.log('display-mode is standalone');
       btn_full_screen.style.display = "none";
     }
 
