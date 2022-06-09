@@ -343,19 +343,7 @@ const getInput = function() {
       btn_full_screen.innerText = "Close Fullscreen";
 
       screen.orientation.lock('landscape');
-      sketchWidth = document.getElementById("js-head").offsetWidth;
-      sketchHeight = document.getElementById("js-head").offsetHeight;
-      if(sketchWidth > sketchHeight){
-        size_head = sketchHeight / 30
-        movement_down = sketchHeight / 3.4
-      }
-      
-      if(sketchWidth < sketchHeight){
-        size_head = sketchWidth / 30
-        movement_down = sketchHeight / 5
-      }
-      renderer = resizeCanvas(sketchWidth, sketchHeight, WEBGL);
-      renderer.parent("js-head");
+      setup();
       redraw();
 
 
