@@ -352,7 +352,8 @@ const getInput = function() {
         size_head = sketchWidth / 30
         movement_down = sketchHeight / 5
       }
-      resizeCanvas(sketchWidth, sketchHeight, WEBGL);
+      var renderer = resizeCanvas(sketchWidth, sketchHeight, WEBGL);
+      renderer.parent("js-head");
       redraw();
 
 
