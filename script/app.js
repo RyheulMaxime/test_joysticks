@@ -89,11 +89,7 @@ function CallbackOpenFullscreen() {
     document.documentElement.msRequestFullscreen();
   }
 
-  
-
 }
-
-/* Close fullscreen */
 function CallbackCloseFullscreen() {
   if (document.exitFullscreen) {
     document.exitFullscreen();
@@ -372,6 +368,16 @@ const init = function () {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM content loaded');
     init();
+
+
+    var supportsOrientationChange = "onorientationchange" in window,
+    orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+
+    window.addEventListener(orientationEvent, function() {
+        setup()
+        redraw()
+    }, false);
+
 
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./serviceWorker.js')

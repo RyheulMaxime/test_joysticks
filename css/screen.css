@@ -2,6 +2,12 @@
 #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: "grafolita-script";
+    font-weight: 600;
+    src: url("../fonts/grafolita-script.woff2") format("woff2")
+}
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -179,7 +185,7 @@ h1 {
     /* font-size: 36px; */
     font-size: 50px;
     line-height: 60px;
-    font-family: wreath, serif;
+    font-family: "grafolita-script", serif;
     font-weight: 500;
     font-style: normal;
 }
@@ -1202,8 +1208,3 @@ No media query since this is the default in mobile first design
     }
 }
 
-/* @media all and (display-mode: fullscreen) {
-    .c-settings--fullscreen{
-        display: none;
-    }
-} */
