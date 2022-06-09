@@ -337,15 +337,16 @@ const getInput = function() {
   var btn_full_screen = document.querySelector(".js-fullscreen")
   btn_full_screen.addEventListener('click', function() {
     if(document.fullscreenElement == null){
+      screen.orientation.lock('landscape');
+      window.location.reload();
       CallbackOpenFullscreen();
       btn_full_screen.innerText = "Close Fullscreen";
-
-      screen.orientation.lock('landscape');
 
     }else{
       CallbackCloseFullscreen();
       btn_full_screen.innerText = "Fullscreen";
       screen.orientation.unlock()
+      window.location.reload();
 
     }
   });
@@ -369,21 +370,19 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM content loaded');
     init();
 
+    // var previousOrientation = window.orientation;
+    // var checkOrientation = function(){
+    //     if(window.orientation !== previousOrientation){
+    //         previousOrientation = window.orientation;
+    //         window.location.reload();
+    //     }
+    // };
 
+    // window.addEventListener("resize", checkOrientation, false);
+    // window.addEventListener("orientationchange", checkOrientation, false);
 
-    var previousOrientation = window.orientation;
-    var checkOrientation = function(){
-        if(window.orientation !== previousOrientation){
-            previousOrientation = window.orientation;
-            window.location.reload();
-        }
-    };
-
-    window.addEventListener("resize", checkOrientation, false);
-    window.addEventListener("orientationchange", checkOrientation, false);
-
-    // (optional) Android doesn't always fire orientationChange on 180 degree turns
-    setInterval(checkOrientation, 2000);
+    // // (optional) Android doesn't always fire orientationChange on 180 degree turns
+    // setInterval(checkOrientation, 2000);
 
 
     if ('serviceWorker' in navigator) {
