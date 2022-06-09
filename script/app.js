@@ -368,15 +368,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // screen.lockOrientation('landscape');
 
-    var btn_full_screen = document.querySelector(".js-fullscreen")
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-      console.log('display-mode is standalone');
-      btn_full_screen.style.display = "none";
-    } 
-    if (window.navigator.standalone == true) {
-      console.log('display-mode is standalone');
-      btn_full_screen.style.display = "none";
-    }
+    // var btn_full_screen = document.querySelector(".js-fullscreen")
+    // if (window.matchMedia('(display-mode: standalone)').matches) {
+    //   console.log('display-mode is standalone');
+    //   btn_full_screen.style.display = "none";
+    // } 
+    // if (window.navigator.standalone == true) {
+    //   console.log('display-mode is standalone');
+    //   btn_full_screen.style.display = "none";
+    // }
 
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./serviceWorker.js')
