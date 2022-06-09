@@ -370,12 +370,20 @@ document.addEventListener('DOMContentLoaded', function() {
     init();
 
 
-    var supportsOrientationChange = "onorientationchange" in window,
-    orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
 
-    window.addEventListener(orientationEvent, function() {
-      window.location.reload();
-    }, false);
+    var previousOrientation = window.orientation;
+    var checkOrientation = function(){
+        if(window.orientation !== previousOrientation){
+            previousOrientation = window.orientation;
+            window.location.reload();
+        }
+    };
+
+    window.addEventListener("resize", checkOrientation, false);
+    window.addEventListener("orientationchange", checkOrientation, false);
+
+    // (optional) Android doesn't always fire orientationChange on 180 degree turns
+    setInterval(checkOrientation, 2000);
 
 
     if ('serviceWorker' in navigator) {
