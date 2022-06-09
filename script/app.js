@@ -89,13 +89,7 @@ function CallbackOpenFullscreen() {
     document.documentElement.msRequestFullscreen();
   }
 
-  screen.orientation.lock('landscape')
-    .then(function() {
-      alert('Locked');
-    })
-    .catch(function(error) {
-      alert(error);
-    });
+  
 
 }
 
@@ -108,8 +102,6 @@ function CallbackCloseFullscreen() {
   } else if (document.msExitFullscreen) { /* IE11 */
     document.msExitFullscreen();
   }
-
-  screen.orientation.unlock()
 
 }
 
@@ -351,11 +343,20 @@ const getInput = function() {
     if(document.fullscreenElement == null){
       CallbackOpenFullscreen();
       btn_full_screen.innerText = "Close Fullscreen";
-      // locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
-      // locOrientation('landscape');
+
+      screen.orientation.lock('landscape')
+      .then(function() {
+        alert('Locked');
+      })
+      .catch(function(error) {
+        alert(error);
+      });
+
     }else{
       CallbackCloseFullscreen();
       btn_full_screen.innerText = "Fullscreen";
+      screen.orientation.unlock()
+
     }
   });
 
