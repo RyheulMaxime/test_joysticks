@@ -89,7 +89,13 @@ function CallbackOpenFullscreen() {
     document.documentElement.msRequestFullscreen();
   }
 
-  screen.orientation.lock('landscape');
+  screen.orientation.lock('landscape')
+    .then(function() {
+      alert('Locked');
+    })
+    .catch(function(error) {
+      alert(error);
+    });
 
 }
 
