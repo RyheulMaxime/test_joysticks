@@ -372,7 +372,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.matchMedia('(display-mode: standalone)').matches) {
       console.log('display-mode is standalone');
       btn_full_screen.style.display = "none";
-    }else if (window.navigator.standalone === true) {
+    } 
+    if (window.navigator.standalone == true) {
       console.log('display-mode is standalone');
       btn_full_screen.style.display = "none";
     }
