@@ -338,9 +338,9 @@ const getInput = function() {
   btn_full_screen.addEventListener('click', function() {
     if(document.fullscreenElement == null){
       CallbackOpenFullscreen();
-      // btn_full_screen.innerText = "Close Fullscreen";
+      btn_full_screen.innerText = "Close Fullscreen";
       // locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
-      locOrientation('landscape');
+      // locOrientation('landscape');
     }else{
       CallbackCloseFullscreen();
       btn_full_screen.innerText = "Fullscreen";
