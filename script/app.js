@@ -338,8 +338,9 @@ const getInput = function() {
   btn_full_screen.addEventListener('click', function() {
     if(document.fullscreenElement == null){
       CallbackOpenFullscreen();
-      btn_full_screen.innerText = "Close Fullscreen";
-      screen.lockOrientation('landscape');
+      // btn_full_screen.innerText = "Close Fullscreen";
+      // locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
+      locOrientation('landscape');
     }else{
       CallbackCloseFullscreen();
       btn_full_screen.innerText = "Fullscreen";
@@ -365,8 +366,13 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM content loaded');
     init();
 
+    // screen.lockOrientation('landscape');
+
     var btn_full_screen = document.querySelector(".js-fullscreen")
     if (window.matchMedia('(display-mode: standalone)').matches) {
+      console.log('display-mode is standalone');
+      btn_full_screen.style.display = "none";
+    }else if (window.navigator.standalone === true) {
       console.log('display-mode is standalone');
       btn_full_screen.style.display = "none";
     }
