@@ -10,7 +10,7 @@
         }
       ],
     "background_color": "#e61515",
-    "display": "fullscreen",
+    "display": "standalone",
     "orientation": "landscape",
     "scope": "/test_joysticks/",
     "start_url": "index.html"
