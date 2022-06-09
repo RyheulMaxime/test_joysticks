@@ -21,6 +21,8 @@ var size_head
 var movement_down 
 var inverted = false;
 
+var renderer;
+
 function setup() {
   sketchWidth = document.getElementById("js-head").offsetWidth;
   sketchHeight = document.getElementById("js-head").offsetHeight;
@@ -33,7 +35,7 @@ function setup() {
     size_head = sketchWidth / 30
     movement_down = sketchHeight / 5
   }
-  var renderer = createCanvas(sketchWidth, sketchHeight, WEBGL);
+  renderer = createCanvas(sketchWidth, sketchHeight, WEBGL);
   renderer.parent("js-head");
 }
 
@@ -352,7 +354,7 @@ const getInput = function() {
         size_head = sketchWidth / 30
         movement_down = sketchHeight / 5
       }
-      var renderer = resizeCanvas(sketchWidth, sketchHeight, WEBGL);
+      renderer = resizeCanvas(sketchWidth, sketchHeight, WEBGL);
       renderer.parent("js-head");
       redraw();
 
