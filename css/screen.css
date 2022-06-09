@@ -1201,3 +1201,9 @@ No media query since this is the default in mobile first design
         display: none;
     }
 }
+
+@media all and (display-mode: fullscreen) {
+    .c-settings--fullscreen{
+        display: none;
+    }
+}
