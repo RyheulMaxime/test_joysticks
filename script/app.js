@@ -88,6 +88,15 @@ function CallbackOpenFullscreen() {
   } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
     document.documentElement.msRequestFullscreen();
   }
+
+  screen.orientation.lock("portrait")
+	.then(function() {
+		alert('Locked');
+	})
+	.catch(function(error) {
+		alert(error);
+	});
+
 }
 
 /* Close fullscreen */
@@ -99,6 +108,9 @@ function CallbackCloseFullscreen() {
   } else if (document.msExitFullscreen) { /* IE11 */
     document.msExitFullscreen();
   }
+
+  screen.orientation.unlock()
+
 }
 
 //#endregion
@@ -365,18 +377,6 @@ const init = function () {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM content loaded');
     init();
-
-    // screen.lockOrientation('landscape');
-
-    // var btn_full_screen = document.querySelector(".js-fullscreen")
-    // if (window.matchMedia('(display-mode: standalone)').matches) {
-    //   console.log('display-mode is standalone');
-    //   btn_full_screen.style.display = "none";
-    // } 
-    // if (window.navigator.standalone == true) {
-    //   console.log('display-mode is standalone');
-    //   btn_full_screen.style.display = "none";
-    // }
 
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./serviceWorker.js')
