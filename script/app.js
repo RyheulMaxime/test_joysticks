@@ -139,16 +139,16 @@ const getInput = function() {
           //   return response.json();
           // });
         };
-        if (joy_Y < 0 && position_x > -0.25){
+        if (joy_Y < -20 && position_x > -0.25){
           position_x += joy_Y * speed;
         };
-        if (joy_Y > 0 && position_x < 0.35){
+        if (joy_Y > 20 && position_x < 0.35){
           position_x += joy_Y * speed;
         };
-        if (joy_X < 0 && position_y > -0.25){
+        if (joy_X < -20 && position_y > -0.25){
           position_y += joy_X * speed;
         };
-        if (joy_X > 0 && position_y < 0.25){
+        if (joy_X > 20 && position_y < 0.25){
           position_y += joy_X * speed;
         };
         redraw();
@@ -165,16 +165,16 @@ const getInput = function() {
           //   return response.json();
           // });
         };
-        if (joy_Y < 0 && - position_x > -0.25){
+        if (joy_Y < -20 && - position_x > -0.25){
           position_x += - joy_Y * speed;
         };
-        if (joy_Y > 0 && - position_x < 0.35){
+        if (joy_Y > 20 && - position_x < 0.35){
           position_x += - joy_Y * speed;
         };
-        if (joy_X < 0 &&  position_y > -0.25){
+        if (joy_X < -20 &&  position_y > -0.25){
           position_y +=  joy_X * speed;
         };
-        if (joy_X > 0 &&  position_y < 0.25){
+        if (joy_X > 20 &&  position_y < 0.25){
           position_y +=  joy_X * speed;
         };
         if(sleep_mode == false){
