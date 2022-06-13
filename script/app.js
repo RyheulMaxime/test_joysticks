@@ -20,6 +20,7 @@ var sketchHeight;
 var size_head
 var movement_down 
 var inverted = false;
+var renderer;
 
 function setup() {
   sketchWidth = document.getElementById("js-head").offsetWidth;
@@ -33,7 +34,7 @@ function setup() {
     size_head = sketchWidth / 30
     movement_down = sketchHeight / 5
   }
-  var renderer = createCanvas(sketchWidth, sketchHeight, WEBGL);
+  renderer = createCanvas(sketchWidth, sketchHeight, WEBGL);
   renderer.parent("js-head");
 }
 
@@ -334,9 +335,21 @@ const getInput = function() {
     }
   });
 
-  screen. orientation. addEventListener("change", function(e) { 
+  screen.orientation.addEventListener("change", function(e) { 
     // Do something on change 
-    setup();
+    // setup();
+    sketchWidth = document.getElementById("js-head").offsetWidth;
+    sketchHeight = document.getElementById("js-head").offsetHeight;
+    if(sketchWidth > sketchHeight){
+      size_head = sketchHeight / 30
+      movement_down = sketchHeight / 3.4
+    }
+    
+    if(sketchWidth < sketchHeight){
+      size_head = sketchWidth / 30
+      movement_down = sketchHeight / 5
+    }
+    renderer = resizeCanvas(sketchWidth, sketchHeight, WEBGL);
     redraw();
   });
   
