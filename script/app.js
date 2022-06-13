@@ -334,6 +334,12 @@ const getInput = function() {
     }
   });
 
+  screen. orientation. addEventListener("change", function(e) { 
+    // Do something on change 
+    setup();
+    redraw();
+  });
+  
   var btn_full_screen = document.querySelector(".js-fullscreen")
   btn_full_screen.addEventListener('click', function() {
     if(document.fullscreenElement == null){
@@ -341,9 +347,6 @@ const getInput = function() {
       btn_full_screen.innerText = "Close Fullscreen";
 
       screen.orientation.lock('landscape');
-      setup();
-      redraw();
-
 
     }else{
       CallbackCloseFullscreen();
