@@ -302,6 +302,7 @@ const getInput = function() {
   input_speed_wink.addEventListener('change', function() {
     // console.log(this.value)
     speed_wink = this.value * 1000;
+    console.log(speed_wink);
   });
 
   var checkbox_sleep = document.querySelector(".js-slaapstand")
@@ -387,20 +388,6 @@ const init = function () {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM content loaded');
     init();
-
-    // var previousOrientation = window.orientation;
-    // var checkOrientation = function(){
-    //     if(window.orientation !== previousOrientation){
-    //         previousOrientation = window.orientation;
-    //         window.location.reload();
-    //     }
-    // };
-
-    // window.addEventListener("resize", checkOrientation, false);
-    // window.addEventListener("orientationchange", checkOrientation, false);
-
-    // // (optional) Android doesn't always fire orientationChange on 180 degree turns
-    // setInterval(checkOrientation, 2000);
 
 
     if ('serviceWorker' in navigator) {
