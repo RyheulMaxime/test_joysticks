@@ -299,7 +299,7 @@ const getInput = function() {
   });
   
   var input_speed_wink = document.querySelector(".js-snelheid-knipogen")
-  input_speed_wink.addEventListener('change', function() {
+  input_speed_wink.addEventListener('click', function() {
     // console.log(this.value)
     speed_wink = this.value * 1000;
     console.log(speed_wink);
